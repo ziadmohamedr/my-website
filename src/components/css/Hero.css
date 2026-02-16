@@ -1,0 +1,234 @@
+.hero {
+  min-height: 100vh;
+  padding-top: 110px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #f4f8ff;
+  overflow: hidden;
+  background: linear-gradient(145deg, #090c14 0%, #111a2a 55%, #17253d 100%);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 22%, rgba(62, 231, 185, 0.2), transparent 35%),
+    radial-gradient(circle at 85% 68%, rgba(255, 159, 90, 0.22), transparent 32%);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+.hero-orb-1 {
+  width: 340px;
+  height: 340px;
+  left: -120px;
+  top: 120px;
+  background: radial-gradient(circle, rgba(62, 231, 185, 0.34), transparent 70%);
+  animation: drift 8s ease-in-out infinite;
+}
+
+.hero-orb-2 {
+  width: 280px;
+  height: 280px;
+  right: -80px;
+  bottom: 90px;
+  background: radial-gradient(circle, rgba(255, 159, 90, 0.28), transparent 70%);
+  animation: drift 10s ease-in-out infinite reverse;
+}
+
+.hero-content {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+
+.gradient-text {
+  background: linear-gradient(95deg, var(--primary), #8af6db);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2.2vw, 1.18rem);
+  color: #d7e4f9;
+  max-width: 620px;
+  margin-bottom: 20px;
+}
+
+.hero-kpis {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.hero-kpis span {
+  font-size: 0.83rem;
+  color: #d8e3f7;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 999px;
+  padding: 6px 12px;
+  animation: pulseChip 2.7s ease-in-out infinite;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar {
+  width: 300px;
+  height: 300px;
+  border-radius: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04)),
+    rgba(4, 9, 17, 0.45);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35),
+    inset 0 0 30px rgba(62, 231, 185, 0.15);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.avatar::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    rgba(62, 231, 185, 0.5) 25%,
+    transparent 55%,
+    rgba(255, 159, 90, 0.45) 75%,
+    transparent 100%
+  );
+  animation: spinRing 6s linear infinite;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.avatar::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 33px;
+  background: rgba(8, 14, 24, 0.45);
+  pointer-events: none;
+}
+
+.avatar-image {
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  margin: 4px;
+  border-radius: 32px;
+  object-fit: cover;
+  object-position: center top;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.avatar:hover {
+  box-shadow:
+    0 24px 50px rgba(0, 0, 0, 0.42),
+    0 0 0 8px rgba(62, 231, 185, 0.08),
+    inset 0 0 40px rgba(62, 231, 185, 0.2);
+}
+
+.avatar:hover .avatar-image {
+  transform: scale(1.06);
+  filter: saturate(1.08) contrast(1.03);
+}
+
+.hero-wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-18px) scale(1.05);
+  }
+}
+
+@keyframes pulseChip {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes spinRing {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero {
+    padding-top: 90px;
+    text-align: center;
+  }
+
+  .hero-kpis,
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .avatar {
+    width: 240px;
+    height: 240px;
+    font-size: 2.1rem;
+    border-radius: 28px;
+  }
+}

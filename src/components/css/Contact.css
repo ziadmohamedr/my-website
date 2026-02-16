@@ -1,0 +1,173 @@
+.contact {
+  padding: 92px 0;
+  background: linear-gradient(180deg, #0a101a 0%, #080c14 100%);
+}
+
+.contact-info {
+  display: grid;
+  gap: 12px;
+}
+
+.info-card {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 13px;
+  background: linear-gradient(145deg, #121b2d 0%, #182740 100%);
+  border: 1px solid #2c3955;
+}
+
+.info-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(62, 231, 185, 0.15);
+  color: var(--primary);
+  border: 1px solid rgba(62, 231, 185, 0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-content h5 {
+  margin: 0 0 2px;
+  color: #f3f7ff;
+  font-size: 0.95rem;
+}
+
+.info-content p {
+  margin: 0;
+  color: #9db0cf;
+}
+
+.social-links {
+  margin-top: 8px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #2d3d5d;
+  background: linear-gradient(145deg, #101a2c 0%, #16243c 100%);
+}
+
+.social-links h5 {
+  color: #f3f7ff;
+  margin-bottom: 10px !important;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(62, 231, 185, 0.2), rgba(255, 159, 90, 0.2));
+  border: 1px solid rgba(148, 180, 230, 0.35);
+  color: #e8f6ff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.24);
+  animation: socialFloat 3.2s ease-in-out infinite;
+}
+
+.social-icon::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.social-icon::after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.72rem;
+  color: #d6e4ff;
+  background: rgba(8, 14, 23, 0.9);
+  border: 1px solid #334a70;
+  border-radius: 999px;
+  padding: 4px 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, bottom 0.25s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px) scale(1.06);
+  color: #fff;
+  border-color: rgba(62, 231, 185, 0.7);
+  box-shadow:
+    0 10px 22px rgba(62, 231, 185, 0.25),
+    0 0 0 6px rgba(62, 231, 185, 0.08);
+}
+
+.social-icon:hover::before {
+  opacity: 1;
+  animation: socialSpin 1.4s linear infinite;
+}
+
+.social-icon:hover::after {
+  opacity: 1;
+  bottom: -36px;
+}
+
+.social-icon:nth-child(2) {
+  animation-delay: 0.18s;
+}
+
+.social-icon:nth-child(3) {
+  animation-delay: 0.36s;
+}
+
+@keyframes socialFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes socialSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.contact-message-card {
+  height: 100%;
+  border-radius: 18px;
+  padding: 30px;
+  background: linear-gradient(145deg, #122137 0%, #1a2e4b 100%);
+  border: 1px solid #324364;
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.26);
+}
+
+.contact-message-card h3 {
+  color: #f4f8ff;
+  margin-bottom: 10px;
+}
+
+.contact-message-card p {
+  color: #9db0cf;
+  margin-bottom: 22px;
+}
+
+@media (max-width: 767.98px) {
+  .contact {
+    padding: 72px 0;
+  }
+}
