@@ -29,7 +29,7 @@ export default function Preloader() {
           <div className="preloader-ring ring-two"></div>
           <div className="preloader-logo">ZM</div>
         </div>
-        <div className="preloader-text">Ziad Mohamed, CPA</div>
+        <div className="preloader-text">Ziad Mohamed, zmr .</div>
         <div className="preloader-shimmer">
           <span></span>
         </div>
