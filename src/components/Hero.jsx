@@ -3,7 +3,7 @@ import "./css/Hero.css";
 import ziadImage from "../data/assets/ziad.png";
 
 const hero = {
-  title: "Professional",
+  title: "Professionalllll",
   highlight: "Accounting Services",
   subtitle:
     "Ziad Mohamed is a certified accountant helping businesses with bookkeeping, tax compliance, financial reporting, and audit preparation.",
@@ -12,6 +12,7 @@ const hero = {
   avatar: "ZM",
   imageUrl: ziadImage,
 };
+// اعمل ؤفقdfhk
 
 export default function Hero() {
   useEffect(() => {
