@@ -3,8 +3,8 @@ import "./css/Hero.css";
 import ziadImage from "../data/assets/ziad.png";
 
 const hero = {
-  title: "Professionalllll",
-  highlight: "Accounting Services",
+  title: "General",
+  highlight: "Accountant",
   subtitle:
     "Ziad Mohamed is a certified accountant helping businesses with bookkeeping, tax compliance, financial reporting, and audit preparation.",
   primaryCta: "Download CV",
