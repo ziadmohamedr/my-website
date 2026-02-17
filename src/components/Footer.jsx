@@ -17,7 +17,7 @@ import {
 import "./css/Footer.css";
 
 const footer = {
-  title: "Ziad Mohamed, CPA",
+  title: "Ziad Mohamed, zmr",
   text: "Independent accounting consultant focused on clean books, compliant taxes, and clear financial decisions.",
   linksTitle: "Quick Links",
   links: [

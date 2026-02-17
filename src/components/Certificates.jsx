@@ -4,40 +4,41 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "./css/Certificates.css";
 
-const imageModules = import.meta.glob("../data/assets/*.jpeg", {
-  eager: true,
-  import: "default",
-});
+import azhar from "../data/assets/Al-Azhar Univeristy.jpeg";
+import banqueMisr1 from "../data/assets/Banque Misr.jpeg";
+import banqueMisr2 from "../data/assets/Banque Misr2.jpeg";
+import digitalMarketing from "../data/assets/google.jpeg";
+import graduation from "../data/assets/Graduation.jpeg";
+import microsoftOffice from "../data/assets/Udemy.jpeg";
+import cambridge1 from "../data/assets/UNIVERSITY OF CAMBRIDGE.jpeg";
+import cambridge2 from "../data/assets/UNIVERSITY OF CAMBRIDGE2.jpeg";
+import cambridge3 from "../data/assets/UNIVERSITY OF CAMBRIDGE3.jpeg";
+import cambridge4 from "../data/assets/UNIVERSITY OF CAMBRIDGE4.jpeg";
+import cambridge5 from "../data/assets/UNIVERSITY OF CAMBRIDGE5.jpeg";
+import cambridge6 from "../data/assets/UNIVERSITY OF CAMBRIDGE6.jpeg";
+import edlal from "../data/assets/edlal.jpeg";
+import strategic from "../data/assets/youth.jpeg";
+import icdl from "../data/assets/ICDL.jpeg";
+import excelTrack from "../data/assets/Udemy.jpeg";
 
-const certificateNames = [
-  "Al-Azhar University",
-  "Banque Misr- Summer Training",
-  "Banque Misr- Summer Training",
-  "Digital Marketing",
-  "Graduation Certificate",
-  "Microsoft Office ",
-  "Cambridge University",
-  "Cambridge University",
-  "Cambridge University",
-  "Cambridge University",
-  "Cambridge University",
-  "Cambridge University",
-  "Cambridge University",
-  "Edlal Certificate",
-  "Strategic Planning",
-  "ICDL",
-  "Excel track (Accounting Excel)",
+const certificates = [
+  { id: 1, imageUrl: azhar, title: "Al-Azhar University" },
+  { id: 2, imageUrl: banqueMisr1, title: "Banque Misr- Summer Training" },
+  { id: 3, imageUrl: banqueMisr2, title: "Banque Misr- Summer Training" },
+  { id: 4, imageUrl: digitalMarketing, title: "Digital Marketing" },
+  { id: 5, imageUrl: graduation, title: "Graduation Certificate" },
+  { id: 6, imageUrl: microsoftOffice, title: "Microsoft Office" },
+  { id: 7, imageUrl: cambridge1, title: "Cambridge University" },
+  { id: 8, imageUrl: cambridge2, title: "Cambridge University" },
+  { id: 9, imageUrl: cambridge3, title: "Cambridge University" },
+  { id: 10, imageUrl: cambridge4, title: "Cambridge University" },
+  { id: 11, imageUrl: cambridge5, title: "Cambridge University" },
+  { id: 12, imageUrl: cambridge6, title: "Cambridge University" },
+  { id: 13, imageUrl: edlal, title: "Edlal Certificate" },
+  { id: 14, imageUrl: strategic, title: "Strategic Planning" },
+  { id: 15, imageUrl: icdl, title: "ICDL" },
+  { id: 16, imageUrl: excelTrack, title: "Excel track (Accounting Excel)" },
 ];
-
-const certificates = Object.entries(imageModules)
-  .sort(([a], [b]) =>
-    a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }),
-  )
-  .map(([, imageUrl], index) => ({
-    id: index + 1,
-    imageUrl,
-    title: certificateNames[index] || `Certificate ${index + 1}`,
-  }));
 
 export default function Certificates() {
   const [activeIndex, setActiveIndex] = useState(0);
