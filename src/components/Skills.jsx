@@ -1,5 +1,38 @@
+
 import { useEffect } from "react";
 import AOS from "aos";
+import {
+  FaAddressBook,
+  FaBalanceScale,
+  FaBook,
+  FaBullhorn,
+  FaBuilding,
+  FaCalculator,
+  FaCalendarAlt,
+  FaChalkboardTeacher,
+  FaChartBar,
+  FaClipboardCheck,
+  FaCogs,
+  FaComments,
+  FaEnvelope,
+  FaFileExcel,
+  FaFileInvoiceDollar,
+  FaFileWord,
+  FaFilter,
+  FaKeyboard,
+  FaLanguage,
+  FaLayerGroup,
+  FaLinkedin,
+  FaMicrophone,
+  FaMicrosoft,
+  FaProjectDiagram,
+  FaSearch,
+  FaShoppingCart,
+  FaTable,
+  FaUniversity,
+  FaUsers,
+  FaWallet,
+} from "react-icons/fa";
 import "aos/dist/aos.css";
 import "./css/Skills.css";
 
@@ -305,6 +338,42 @@ const skills = [
   },
 ];
 
+const skillIcons = {
+  CM: FaCogs,
+  SP: FaProjectDiagram,
+  EX: FaFileExcel,
+  PQ: FaFilter,
+  PV: FaTable,
+  MO: FaMicrosoft,
+  EA: FaCalculator,
+  LI: FaLinkedin,
+  DM: FaBullhorn,
+  EM: FaEnvelope,
+  SE: FaSearch,
+  BC: FaUniversity,
+  BO: FaBuilding,
+  FA: FaFileInvoiceDollar,
+  AU: FaClipboardCheck,
+  GR: FaLayerGroup,
+  YE: FaCalendarAlt,
+  TB: FaBalanceScale,
+  JE: FaBook,
+  TX: FaFileInvoiceDollar,
+  BR: FaUniversity,
+  BA: FaChartBar,
+  FC: FaWallet,
+  EC: FaShoppingCart,
+  PS: FaChalkboardTeacher,
+  PW: FaMicrophone,
+  SC: FaComments,
+  LD: FaUsers,
+  EN: FaLanguage,
+  DT: FaKeyboard,
+  ER: FaProjectDiagram,
+  MW: FaFileWord,
+  OA: FaAddressBook,
+};
+
 export default function Skills() {
   useEffect(() => {
     AOS.init({ duration: 900, once: false });
@@ -344,24 +413,30 @@ export default function Skills() {
           </div>
 
           <div className="skills-grid">
-            {skills.map((skill, index) => (
-              <article
-                key={skill.id}
-                className="skill-card"
-                data-aos="fade-up"
-                data-aos-delay={index * 45}>
-                <div className="skill-glow"></div>
-                <div className="skill-top">
-                  <span className="skill-icon">{skill.icon}</span>
-                  <span className="skill-level">{skill.level}</span>
-                </div>
-                <h3>{skill.name}</h3>
-                <p>{skill.description}</p>
-                {skill.source && (
-                  <span className="skill-source">{skill.source}</span>
-                )}
-              </article>
-            ))}
+            {skills.map((skill, index) => {
+              const SkillIcon = skillIcons[skill.icon] || FaCogs;
+
+              return (
+                <article
+                  key={skill.id}
+                  className="skill-card"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 45}>
+                  <div className="skill-glow"></div>
+                  <div className="skill-top">
+                    <span className="skill-icon">
+                      <SkillIcon aria-hidden="true" />
+                    </span>
+                    <span className="skill-level">{skill.level}</span>
+                  </div>
+                  <h3>{skill.name}</h3>
+                  <p>{skill.description}</p>
+                  {skill.source && (
+                    <span className="skill-source">{skill.source}</span>
+                  )}
+                </article>
+              );
+            })}
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ const contact = {
   emailLabel: "Email",
   email: "Ziadm9320@gmail.com",
   addressLabel: "Location",
-  address: "Ashmon , Menoufia, Egypt",
+  address: "Nasr city , Cairo, Egypt",
   socialTitle: "Social",
   social: [
     {
